@@ -13,9 +13,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      {!!process.env.NEXT_PUBLIC_GA_ID && (
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID} />
-      )}
       <body className={notoSansJP.className}>
         <Header />
         <main>
@@ -23,6 +20,9 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
+      {!!process.env.GOOGLE_ANALYTICS_ID && (
+        <GoogleTagManager gtmId={process.env.GOOGLE_ANALYTICS_ID} />
+      )}
     </html>
   );
 }
